@@ -1,15 +1,12 @@
-package cris.Pelicula;
+package com.cris.screenmatch.titulo;
 
-public class Pelicula {
-
+public class Titulo {
     private String nombre = "";
     private int fechaDeLanzamiento= 0;
-    private int duracionDePelicula = 0;
+    private int duracionEnMinutos = 0;
     private boolean incluidoEnElPlan;
     private double sumaDeEvaluaciones=0;
     private int cantidaEvaluciones = 0;
-
-    public Pelicula(){}
 
     public String getNombre() {
         return nombre;
@@ -27,12 +24,12 @@ public class Pelicula {
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
 
-    public int getDuracionDePelicula() {
-        return duracionDePelicula;
+    public int getDuracionEnMinutos() {
+        return duracionEnMinutos;
     }
 
-    public void setDuracionDePelicula(int duracionDePelicula) {
-        this.duracionDePelicula = duracionDePelicula;
+    public void setDuracionEnMinutos(int duracionEnMinutos) {
+        this.duracionEnMinutos = duracionEnMinutos;
     }
 
     public boolean isIncluidoEnElPlan() {
@@ -60,6 +57,6 @@ public class Pelicula {
                 Fecha de lanzamiento: %d
                 Duracion: %d
                 Nota: %.1f
-                """,this.nombre,this.fechaDeLanzamiento,this.duracionDePelicula,  calculaMedia() );
+                """,this.nombre,this.fechaDeLanzamiento,getDuracionEnMinutos(),  calculaMedia() );
     }
 }
