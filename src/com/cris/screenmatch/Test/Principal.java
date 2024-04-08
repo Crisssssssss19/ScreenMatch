@@ -2,6 +2,8 @@ package com.cris.screenmatch.Test;
 
 import com.cris.screenmatch.Pelicula.Pelicula;
 import com.cris.screenmatch.calculos.CalculadoraDeTiempo;
+import com.cris.screenmatch.calculos.FiltroDeRecomendacion;
+import com.cris.screenmatch.serie.Episodio;
 import com.cris.screenmatch.serie.Serie;
 
 public class Principal {
@@ -36,6 +38,17 @@ public class Principal {
         cal.incluye(serie);
         cal.incluye(otraPelicula);
         System.out.println("Tiempo necesario para ver tus titulos estas vacaciones " + cal.getTiempoTotal() + " minutos");
+
+        FiltroDeRecomendacion filtroDeRecomendacion = new FiltroDeRecomendacion();
+        System.out.println(filtroDeRecomendacion.filtra(pelicula));
+
+        Episodio episodio = new Episodio();
+        episodio.setCapitulo(1);
+        episodio.setNombre("La casa Targeryen");
+        episodio.setSerie(serie);
+        episodio.setTotalVisualizaciones(100);
+        System.out.println(filtroDeRecomendacion.filtra(episodio));
+
     }
 
 
